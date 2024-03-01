@@ -1,6 +1,9 @@
-.portfolio{
+@import '../../app.scss';
+
+.portfolio {
     position: relative;
-    .progress{
+
+    .progress {
         position: sticky;
         top: 0;
         left: 0;
@@ -9,64 +12,122 @@
         color: orange;
         font-size: 36px;
         z-index: 4;
-        
-        .progressBar{
+
+        @include mobile {
+            position: relative;
+            font-size: 25px;
+        }
+
+        .progressBar {
             height: 7px;
             background-color: white;
             border-radius: 50px;
-            
+
         }
     }
 
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            .wrapper{
-                max-width: 1000px;
-                margin: auto;
-                height: 100%;
-                
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap:50px;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
 
-                .imgContainer{
-                    flex: 1;
-                    height: 50%;
-                    
-                    img{
-                        width: 100%;
-                        height: 100%;
+        @include mobile {}
+
+        .wrapper {
+            max-width: 1000px;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+
+            @include mobile {
+                flex-direction: column;
+            }
+
+            .imgContainer {
+                flex: 1;
+                height: 50%;
+                @include mobile{
+              
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @include mobile{
                         object-fit: cover;
                     }
                 }
-                .textContainer{
-                    flex:1;
+            }
+
+            .textContainer {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                @include mobile {
+                    display: none;
+                }
+
+                h2 {
+                    font-size: 50px;
+                }
+
+                p {
+                    color: gray;
+                    font-size: 20px;                   
+                }
+
+                button {
+                    background-color: orange;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 10px;
+                    width: 170px;
+                    cursor: pointer;
+                }
+
+            }
+
+            .textContainerMobile {
+                flex: 1;
+                display: none;
+                flex-direction: column;
+                gap: 30px;
+
+                @include mobile {
                     display: flex;
                     flex-direction: column;
-                    gap: 30px;
-                    h2{
-                        font-size: 50px;
-                    }
-                    p{
-                        color: gray;
-                        font-size: 20px;
-                    }
-                    button{
-                        background-color: orange;
-                        border: none;
-                        border-radius: 10px;
-                        padding: 10px;
-                        width: 170px;
-                        cursor: pointer;
-                    }
-            
+                    margin: 10px;
+                    align-items: center;
+                    justify-content: center;
                 }
+
+                h2 {
+                    font-size: 50px;
+                }
+
+                p {
+                    color: gray;
+                    font-size: 20px;
+                }
+
+                button {
+                    background-color: orange;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 10px;
+                    width: 170px;
+                    cursor: pointer;
+                }
+
             }
         }
     }
+}

@@ -1,4 +1,6 @@
-.contact{
+@import '../../app.scss';
+
+.contact {
     height: 100%;
     max-width: 1000px;
     display: flex;
@@ -7,31 +9,64 @@
     align-items: center;
     justify-content: center;
 
-    .textcontainer{
-        flex:1;
+    @include mobile {
+        display: flex;
+        flex-direction: column;        
+        gap: 20px;
+    }
+
+    .textcontainer {
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 40px;
 
-        h1{
-            font-size: 80px;
-            line-height: 78px;
+        @include mobile {
+            margin-top: 100px;
+            padding: 10px;
+            text-align: center;
         }
 
-        span{
+        h1 {
+            font-size: 80px;
+            line-height: 78px;
+            @include mobile{
+                font-size: 50px;
+                text-align: center;
+            }
+        }
+
+        span {
             font-weight: 200;
         }
     }
 
-    .formcontainer{
-        flex:1;
+    .formcontainer {
+        flex: 1;
         position: relative;
-        form{
 
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            input, textarea{
+
+            @include mobile {
+                width: 90%;
+                position: absolute;
+                top: 0;
+                bottom: 100;
+                margin: 0;
+            }
+
+            input,
+            textarea {
                 padding: 20px;
                 background-color: transparent;
                 color: white;
@@ -39,22 +74,34 @@
                 border: 1px solid white;
 
             }
-          button{
-            padding: 10px;
-            background-color: orange;
-            border :none;
-            border-radius: 5px;
+
+            button {
+                padding: 10px;
+                background-color: orange;
+                border: none;
+                border-radius: 5px;
 
 
+            }
         }
-        }
 
-        .phonesvg{
+        .phonesvg {
             position: absolute;
             top: 0;
             stroke: orange;
-            z-index:-1;
+            z-index: -1;
 
+            @include mobile {
+                position: relative;
+            }
+            .phoneSVG{
+                width: 400px;
+                height: 400px;
+                @include mobile{
+                    width: 300px;
+                    height: 300px;
+                }
+            }
         }
 
     }
