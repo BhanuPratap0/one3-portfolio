@@ -49,11 +49,11 @@ const Hero = () => {
       <div className="wrapper">
         <motion.div className="textContainer" variants={textVarients} initial="initial" animate="animate" >
 
-          <motion.h2  variants={textVarients}>Vishal Kalwani</motion.h2>
-          <motion.h1 variants={textVarients}>Web Developer and Ui designer</motion.h1>
+          <motion.h2  variants={textVarients}>One3 Softwares</motion.h2>
+          <motion.h1 variants={textVarients}>Web Development and Ui designing</motion.h1>
           <motion.div className="buttons">
-            <motion.button variants={textVarients}>see the latest work</motion.button>
-            <motion.button variants={textVarients}>contact Me</motion.button>
+            <motion.button variants={textVarients}>See the latest work</motion.button>
+            <motion.button variants={textVarients}>Contact Us</motion.button>
           </motion.div>
         <motion.img src="/scroll.png" alt="" variants={textVarients} animate="scrollButton" />
         </motion.div>
